@@ -1,0 +1,19 @@
+<template name="home">
+  
+  <h2> <b> Homepage </b> </h2>
+ 
+  <form id="insert-status">
+    <p>
+      <br>
+	  <textarea class="form-control" placeholder="What's on your mind..." name="text"></textarea>
+    </p>
+    <p>
+      <input type="submit" class="btn btn-default">
+    </p>
+  </form>
+  {{#each statuses}}
+    <p>{{timestamp}}, 
+      <a href="{{pathFor 'userProfile' username=getUsername}}">{{getUsername}}</a>: {{text}}
+    </p>
+  {{/each}}
+</template>
